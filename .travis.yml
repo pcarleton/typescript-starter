@@ -26,3 +26,6 @@ before_deploy:
 # Report code coverage to coveralls after successful test runs
 after_success:
   - npm run coveralls
+# Do not send build notifications
+notifications:
+  email: false
