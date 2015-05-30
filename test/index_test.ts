@@ -15,4 +15,8 @@ suite("Index", () => {
         chai.assert.instanceOf(child, index.Parent);
         chai.assert.instanceOf(child, index.Child);
     });
+
+    test("sourcemaps", () => {
+        throw new Error("sourcemaps!!!");
+    });
 });
