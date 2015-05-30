@@ -16,7 +16,7 @@ suite("Index", () => {
         chai.assert.instanceOf(child, index.Child);
     });
 
-    test("sourcemaps", () => {
+    test.skip("sourcemaps", () => {
         throw new Error("sourcemaps!!!");
     });
 });
