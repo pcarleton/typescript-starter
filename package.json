@@ -14,8 +14,8 @@
     "!node_modules/**/*.js"
   ],
   "scripts": {
-    "prebundle": "npm run compile && mv build/src/** .",
-    "bundle": "dts-generator --name $npm_package_name --main ${npm_package_name}/index --baseDir . --exclude node_modules/dts-generator/node_modules/typescript/bin/lib.es6.d.ts -out ${npm_package_name}.d.ts *.d.ts",
+    "prebundle": "npm run compile && cp -R build/src build/bundle",
+    "bundle": "cd build/bundle && dts-generator --name $npm_package_name --main ${npm_package_name}/index --baseDir . --exclude ../../node_modules/dts-generator/node_modules/typescript/bin/lib.es6.d.ts -out ${npm_package_name}.d.ts *.d.ts",
     "clean": "rm -rf build coverage",
     "precompile": "npm run clean",
     "compile": "find src test typings -name \"*.ts\" | xargs tsc --declaration --module commonjs --target es5 --noImplicitAny --sourceMap --outDir build",
