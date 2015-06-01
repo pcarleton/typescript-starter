@@ -26,7 +26,7 @@
     "test": "istanbul cover _mocha -- --reporter ${MOCHA_REPORTER-nyan} --slow 10 --ui tdd --full-trace --require source-map-support/register --recursive build/**/*_test.js ",
     "posttest": "npm run lint && istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "typings": "tsd reinstall && tsd rebundle",
-    "update": "git fetch && git merge origin master && npm run setup"
+    "update": "git fetch && git merge origin/master && npm run setup"
   },
   "repository": {
     "type": "git",
