@@ -23,6 +23,7 @@ before_script:
 # Make sure to bundle the application before any deploys
 before_deploy:
   - npm run bundle
+  - mv build/bundle/* .
 # Report code coverage to coveralls after successful test runs
 after_success:
   - npm run coveralls
