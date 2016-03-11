@@ -31,3 +31,6 @@ build
 *.d.ts
 *.js
 typings
+
+# Personal TSD config (GitHub API Token goes here)
+.tsdrc

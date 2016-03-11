@@ -11,6 +11,12 @@ changes can be merged in. The developer should replace all instances of
 `typescript-starter` with their package name and change the appropriate fields
 in the `package.json`.
 
+## Setup
+
+Create a `.tsdrc` file in the directory with a GitHub API token.  A personal 
+access can be generated at [Settings > Personal access tokens](https://github.com/settings/tokens).
+This token is used by TSD to access type definitions for libraries like mocha.
+
 ## Commands
 
 The default is to use simple npm scripts instead of `gulp` or `grunt` because
