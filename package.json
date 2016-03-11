@@ -22,7 +22,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "find src test -name \"*.ts\" | xargs tslint",
     "setup": "git clean -xdf && npm install && npm run typings",
-    "pretest": "npm run compile && find build -type f -name *.js -exec sed -i'.bak' -e '1s/^var __extends/\\/\\* istanbul ignore next \\*\\/\rvar __extends/;' {} \\;",
+    "pretest": "npm run compile && find build -type f -name *.js -exec perl -i.bak -pe '$_ = qq[/* istanbul ignore next*/\n$_] if $_ =~ /var __extend/ and $. <=2' {} \\;",
     "test": "istanbul cover _mocha -- --reporter ${MOCHA_REPORTER-nyan} --slow 10 --ui tdd --full-trace --require source-map-support/register --recursive build/**/*_test.js ",
     "posttest": "npm run lint && istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "typings": "tsd reinstall && tsd rebundle",
